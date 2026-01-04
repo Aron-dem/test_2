@@ -328,8 +328,8 @@
             .experience-badge { padding: 1rem 1.5rem; }
             .badge-num { font-size: 2rem; }
             
-            .portfolio-item { margin-bottom: 1.5rem; }
-            .video-box { aspect-ratio: 16/9; height: auto; }
+	            .portfolio-item { margin-bottom: 1.5rem; }
+	            .video-box { aspect-ratio: 9/16; height: auto; max-height: 500px; margin: 0 auto; }
             .pricing-card { padding: 2rem 1.5rem; }
             .price { font-size: 2.5rem; }
             .scroll-indicator { width: 40px; height: 40px; bottom: 20px; }
@@ -408,7 +408,7 @@
         <div class="container">
             <div class="section-header"><h2 class="section-title" data-i18n="portfolioTitle">Portfolio</h2><div class="section-underline"></div></div>
             <div class="portfolio-grid">
-                <div class="portfolio-item"><div class="video-box"><video muted loop playsinline preload="none" poster="Poster1.jpg" data-src="Work1.mp4"><source type="video/mp4"></video><div class="video-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div></div><div class="video-info"><div class="video-title" data-i18n="project1Title">Company Video</div><div class="video-category" data-i18n="project1Category">Promotional Content</div></div></div>
+	                <div class="portfolio-item"><div class="video-box"><video muted loop playsinline preload="auto" poster="Poster1.jpg" data-src="Work1.mp4" src="Work1.mp4"><source src="Work1.mp4" type="video/mp4"></video><div class="video-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div></div><div class="video-info"><div class="video-title" data-i18n="project1Title">Company Video</div><div class="video-category" data-i18n="project1Category">Promotional Content</div></div></div>
                 <div class="portfolio-item"><div class="video-box"><video muted loop playsinline preload="none" data-src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-busy-city-at-night-41537-large.mp4"><source type="video/mp4"></video><div class="video-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div></div><div class="video-info"><div class="video-title" data-i18n="project2Title">Creative Content</div><div class="video-category" data-i18n="project2Category">Reels & Social Media</div></div></div>
                 <div class="portfolio-item"><div class="video-box"><video muted loop playsinline preload="none" data-src="https://assets.mixkit.co/videos/preview/mixkit-view-of-a-natural-landscape-50851-large.mp4"><source type="video/mp4"></video><div class="video-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div></div><div class="video-info"><div class="video-title" data-i18n="project3Title">Documentary</div><div class="video-category" data-i18n="project3Category">Cinematic Storytelling</div></div></div>
             </div>
@@ -695,19 +695,19 @@
                 });
             });
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        const video = entry.target;
-                        if (!video.src && video.dataset.src) {
-                            video.src = video.dataset.src;
-                        }
-                    }
-                });
-            }, { threshold: 0.1 });
+	            const observer = new IntersectionObserver((entries) => {
+	                entries.forEach(entry => {
+	                    if (entry.isIntersecting) {
+	                        entry.target.classList.add('visible');
+	                        const video = entry.target.querySelector('video');
+	                        if (video && !video.src && video.dataset.src) {
+	                            video.src = video.dataset.src;
+	                        }
+	                    }
+	                });
+	            }, { threshold: 0.1 });
 
-            document.querySelectorAll('.portfolio-item').forEach(el => observer.observe(el));
+	            document.querySelectorAll('.portfolio-item').forEach(el => observer.observe(el));
 
             const modal = document.getElementById('modal');
             const modalVideo = document.getElementById('modal-video');
