@@ -223,25 +223,47 @@
         .footer:hover p { color: var(--text-primary); }
         .footer span { color: var(--purple-light); font-weight: bold; transition: all 0.4s ease; }
         .footer:hover span { color: var(--purple-main); text-shadow: 0 0 20px var(--glow-purple); }
-        .developer-credit { font-size: 0.9rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(142, 68, 173, 0.1); }
+        .developer-credit { 
+            font-size: 1rem; 
+            margin-top: 2rem; 
+            padding: 1.5rem; 
+            border: 1px solid rgba(142, 68, 173, 0.3);
+            border-radius: 50px;
+            background: rgba(142, 68, 173, 0.05);
+            display: inline-block;
+            animation: ledGlow 3s infinite alternate;
+            box-shadow: 0 0 15px rgba(142, 68, 173, 0.1);
+        }
+        @keyframes ledGlow {
+            0% { box-shadow: 0 0 5px rgba(142, 68, 173, 0.2), inset 0 0 5px rgba(142, 68, 173, 0.1); border-color: rgba(142, 68, 173, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(142, 68, 173, 0.8), inset 0 0 10px rgba(142, 68, 173, 0.3); border-color: #ff00ff; }
+        }
         .developer-link { 
             display: inline-flex; 
             align-items: center; 
-            gap: 0.5rem; 
-            color: #1877f2; 
+            gap: 0.6rem; 
+            color: #fff; 
             text-decoration: none; 
-            font-weight: 600; 
-            padding: 0.5rem 1rem; 
-            border-radius: 25px; 
-            background: rgba(24, 119, 242, 0.1); 
-            border: 1px solid rgba(24, 119, 242, 0.3);
+            font-weight: 800; 
+            padding: 0.6rem 1.5rem; 
+            border-radius: 30px; 
+            background: linear-gradient(45deg, #1877f2, #00d2ff);
+            border: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
         }
         .developer-link:hover { 
-            background: #1877f2; 
-            color: white; 
-            transform: translateY(-3px) scale(1.05); 
-            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4);
+            transform: translateY(-5px) scale(1.1); 
+            box-shadow: 0 15px 40px rgba(24, 119, 242, 0.6);
+            filter: brightness(1.2);
+        }
+        .whatsapp-link { 
+            background: linear-gradient(45deg, #25d366, #128c7e) !important;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3) !important;
+        }
+        .whatsapp-link:hover {
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6) !important;
         }
         .developer-link i {
             font-size: 1.1rem;
