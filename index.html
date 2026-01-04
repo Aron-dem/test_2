@@ -191,11 +191,13 @@
         .pricing-card.featured:hover { transform: scale(1.05) translateY(-20px); box-shadow: 0 10px 30px rgba(241, 196, 15, 0.3); }
         .pricing-card.featured::before { background: linear-gradient(135deg, #f1c40f, #f39c12); }
         .pricing-card.featured::after { background: radial-gradient(ellipse at center, rgba(241, 196, 15, 0.5) 0%, transparent 70%); }
-        .pricing-card.featured h3 { color: #f1c40f; }
+        .pricing-card.featured h3 { color: #f1c40f; transition: all 0.3s ease; cursor: pointer; }
+        .pricing-card.featured h3:active { transform: scale(0.95); text-shadow: 0 0 30px #f1c40f, 0 0 50px #f1c40f; color: #fff; }
         .pricing-card.featured .price { color: #f1c40f; text-shadow: 0 0 20px rgba(241, 196, 15, 0.4); }
         .pricing-card.featured .btn-primary { background: linear-gradient(135deg, #f1c40f, #f39c12); border: none; color: #000; }
         .pricing-card h3 { font-size: 1.6rem; color: var(--purple-light); margin-bottom: 1rem; transition: all 0.4s ease; }
-        .pricing-card:hover h3 { transform: scale(1.1); color: var(--purple-main); }
+        .pricing-card:not(.featured):hover h3 { transform: scale(1.1); color: var(--purple-main); }
+        .pricing-card.featured:hover h3 { transform: scale(1.1); color: #f1c40f; }
         .price { font-size: 3.5rem; font-weight: 900; color: var(--purple-light); margin: 2rem 0; transition: all 0.4s ease; text-shadow: 0 0 20px var(--glow-purple), 0 0 40px var(--glow-purple); }
         .pricing-card:hover .price { color: var(--purple-light); text-shadow: 0 0 30px var(--glow-purple); }
         .price span { font-size: 1.2rem; color: var(--text-secondary); }
@@ -203,7 +205,9 @@
         .pricing-card ul li { color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; justify-content: flex-start; padding: 0.7rem; border-radius: 10px; transition: all 0.4s ease; }
         .pricing-card ul li:hover { background: rgba(142, 68, 173, 0.1); transform: translateX(10px); color: var(--text-primary); }
         .pricing-card ul li::before { content: '✓'; color: var(--purple-light); font-weight: bold; order: 1; font-size: 1.2rem; transition: all 0.4s ease; }
+        .pricing-card.featured ul li::before { color: #f1c40f; text-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
         .pricing-card ul li:hover::before { color: var(--purple-main); transform: scale(1.3); }
+        .pricing-card.featured ul li:hover::before { color: #f1c40f; text-shadow: 0 0 20px #f1c40f; }
         .contact { padding: 120px 0; background: linear-gradient(180deg, rgba(142, 68, 173, 0.05) 0%, transparent 100%); text-align: center; }
         .contact p { font-size: 1.3rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem; transition: all 0.4s ease; }
         .contact p:hover { color: var(--text-primary); }
