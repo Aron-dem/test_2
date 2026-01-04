@@ -675,9 +675,8 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage');
-            if (savedLang) {
-                currentLang = savedLang;
-            }
+            // Default to 'en' if no language is saved
+            currentLang = savedLang || 'en';
             applyLanguage(currentLang);
 
             particlesJS('particles-js', {
