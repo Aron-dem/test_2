@@ -90,7 +90,8 @@
         .section-header:hover .section-title::after { width: 100px; }
         .section-underline { width: 80px; height: 4px; background: var(--gradient-purple); margin: 0 auto; border-radius: 2px; transition: width 0.4s ease; }
         .section-header:hover .section-underline { width: 120px; }
-        .about-content { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
+        .about-content { display: flex; flex-wrap: wrap; gap: 5rem; align-items: center; justify-content: center; }
+        .about-image, .about-text { flex: 1 1 400px; max-width: 100%; }
         .about-image { position: relative; }
         .image-circle { width: 320px; height: 320px; border-radius: 50%; background: var(--gradient-purple); display: flex; align-items: center; justify-content: center; margin: 0 auto; position: relative; box-shadow: 0 25px 80px var(--glow-purple); animation: pulseGlow 3s ease-in-out infinite, morph 8s ease-in-out infinite; transition: all 0.5s ease; overflow: hidden; }
         @keyframes morph { 0%, 100% { border-radius: 50%; } 50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } }
@@ -299,7 +300,8 @@
             .hero-buttons { gap: 1rem; } 
             .btn { padding: 1rem 2rem; font-size: 1rem; }
             
-            .about-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; } 
+            .about-content { flex-direction: column; text-align: center; gap: 3rem; } 
+            .about-image, .about-text { flex: 1 1 100%; }
             .image-circle { width: 250px; height: 250px; margin: 0 auto; } 
             .experience-badge { bottom: -10px; left: 50%; transform: translateX(-50%); }
             
