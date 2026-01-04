@@ -27,7 +27,7 @@
             --glow-strong: rgba(142, 68, 173, 0.9);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { font-family: 'Cairo', 'Tajawal', sans-serif; background: var(--bg-primary); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; width: 100%; margin: 0; padding: 0; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Cairo', 'Tajawal', sans-serif; background: var(--bg-primary); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
         .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -3; background: linear-gradient(45deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%); background-size: 400% 400%; animation: gradientFlow 15s ease infinite; }
         @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -2; }
@@ -177,7 +177,7 @@
         .pricing { padding: 120px 0; }
         .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; }
         .pricing-card { flex: 1 1 350px; max-width: 400px; }
-        .pricing-card:first-child { flex: 1 1 100%; max-width: 600px; margin-bottom: 1rem; }
+        .pricing-card:first-child { flex: 1 1 100%; max-width: 400px; margin-bottom: 1rem; }
         .pricing-card { background: var(--bg-card); padding: 3.5rem 2rem; border-radius: 25px; text-align: center; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); border: 2px solid rgba(142, 68, 173, 0.2); }
         .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--gradient-purple); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.5s ease; filter: blur(30px); }
         .pricing-card::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; background: radial-gradient(ellipse at center, rgba(142, 68, 173, 0.5) 0%, transparent 70%); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.5s ease; filter: blur(20px); }
@@ -425,8 +425,8 @@
         <div class="container">
             <div class="section-header"><h2 class="section-title" data-i18n="pricingTitle">Pricing</h2><div class="section-underline"></div></div>
             <div class="pricing-grid">
-                <div class="pricing-card"><h3 data-i18n="price1Title">Basic</h3><div class="price"><span data-i18n="price1Value">249</span> <span data-i18n="currency">EGP</span></div><ul><li data-i18n="price1Feature1">Up to 5 minutes</li><li data-i18n="price1Feature2">Basic Color Correction</li><li data-i18n="price1Feature3">Two Revisions</li><li data-i18n="price1Feature4">Delivery in 7 days</li></ul><a href="#contact" class="btn btn-secondary" data-i18n="chooseBtn">Choose Now</a></div>
                 <div class="pricing-card featured"><h3 data-i18n="price2Title">Professional</h3><div class="price"><span data-i18n="price2Value">349</span> <span data-i18n="currency">EGP</span></div><ul><li data-i18n="price2Feature1">Up to 15 minutes</li><li data-i18n="price2Feature2">Advanced Color Grading</li><li data-i18n="price2Feature3">Unlimited Revisions</li><li data-i18n="price2Feature4">Delivery in 5 days</li></ul><a href="#contact" class="btn btn-primary" data-i18n="chooseBtn">Choose Now</a></div>
+                <div class="pricing-card"><h3 data-i18n="price1Title">Basic</h3><div class="price"><span data-i18n="price1Value">249</span> <span data-i18n="currency">EGP</span></div><ul><li data-i18n="price1Feature1">Up to 5 minutes</li><li data-i18n="price1Feature2">Basic Color Correction</li><li data-i18n="price1Feature3">Two Revisions</li><li data-i18n="price1Feature4">Delivery in 7 days</li></ul><a href="#contact" class="btn btn-secondary" data-i18n="chooseBtn">Choose Now</a></div>
                 <div class="pricing-card"><h3 data-i18n="price3Title">Premium</h3><div class="price"><span data-i18n="price3Value">449</span> <span data-i18n="currency">EGP</span></div><ul><li data-i18n="price3Feature1">Unlimited Length</li><li data-i18n="price3Feature2">Cinematic Effects</li><li data-i18n="price3Feature3">Priority Support</li><li data-i18n="price3Feature4">Delivery in 3 days</li></ul><a href="#contact" class="btn btn-secondary" data-i18n="chooseBtn">Choose Now</a></div>
             </div>
         </div>
