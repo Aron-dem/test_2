@@ -713,14 +713,20 @@
             const modalVideo = document.getElementById('modal-video');
             const closeModalBtn = document.querySelector('.close-modal');
 
-            document.querySelectorAll('.video-box').forEach(box => {
-                box.addEventListener('click', () => {
-                    const videoElement = box.querySelector('video');
-                    modalVideo.src = videoElement.dataset.src;
-                    modal.classList.add('active');
-                    modalVideo.play();
-                });
-            });
+	            document.querySelectorAll('.video-box').forEach(box => {
+	                box.addEventListener('click', () => {
+	                    const videoElement = box.querySelector('video');
+	                    // Use src if available, otherwise use dataset.src
+	                    const videoSrc = videoElement.src || videoElement.dataset.src;
+	                    if (videoSrc) {
+	                        modalVideo.src = videoSrc;
+	                        modal.classList.add('active');
+	                        modalVideo.play().catch(error => {
+	                            console.log("Video play failed:", error);
+	                        });
+	                    }
+	                });
+	            });
 
             closeModalBtn.addEventListener('click', () => {
                 modal.classList.remove('active');
